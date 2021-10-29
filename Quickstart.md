@@ -38,7 +38,7 @@ make setup
 
 ```bash
 cd wave-app
-make setup
+make run
 ```
 
 ### 5. Make a compressed archive file for submission

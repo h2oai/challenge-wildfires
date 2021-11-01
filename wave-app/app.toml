@@ -1,0 +1,13 @@
+[App]
+Name = "h2o-olympics-challenge-wildfires"
+Version = "0.0.1"
+Title = "H2O Olympics - Challenge Wildfires"
+Description = "Challenge Wildfires Starter Kit"
+LongDescription = "about.md"
+Tags = ["Forecasting"]
+Keywords = ["H2O", "Machine Learning", "AI for good", "H2O Olympics"]
+
+[Runtime]
+Module = "src.app"
+MemoryLimit = "5Gi"
+MemoryReservation = "1Gi"

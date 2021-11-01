@@ -8,9 +8,14 @@ setup: ## Install dependencies
 run: ## Run the Wave App (run `make setup` first)
 	./venv/bin/wave run src.app
 
-bundle: # Create a compressed archive file for submission
-	tar -czf ../bundle.tgz ./
+bundle: ## wave app bundle for H2O AI Hybrid Cloud
+	h2o bundle
+
+submission: # Create a compressed archive file for submission
+	cp -r ../notebook/ ./notebook/
+	tar cvf ../submission.tar ./notebook/ *.wave
+	rm -rf ./notebook/
 
 clean:
 	rm -rf venv/
-	rm ../bundle.tgz
+	rm ../submission.tar

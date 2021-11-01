@@ -4,11 +4,12 @@
 
 ### Requirements
 
-1. Python 3.6+
-2. pip3
-3. h2o_wave v0.18.0
-4. H2O Wave SDK for your platform
+1. Python 3.6+, and pip3
+2. h2o_wave v0.18.0
+3. H2O Wave SDK for your platform
    https://github.com/h2oai/wave/releases/tag/v0.18.0
+4. H2O.ai Hybrid Cloud cli (to bundle H2O wave apps)
+   https://h2oai-cloud-release.s3.amazonaws.com/releases/ai/h2o/h2o-cloud/latest/index.html
 5. `tar` (or an alternative, to create a compressed archive file for submission)
 
 ### 1. Run the H2O Wave Server
@@ -38,7 +39,7 @@ make setup
 
 ```bash
 cd wave-app
-make setup
+make run
 ```
 
 ### 5. Make a compressed archive file for submission

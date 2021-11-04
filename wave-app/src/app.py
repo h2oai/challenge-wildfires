@@ -6,54 +6,54 @@ from . import data, model, predict
 
 @app('/')
 async def serve(q: Q):
-    # INITIALIZE APP AND CLIENT IF NOT ALREADY INITIALIZED
+    # Initialize app and client if not already initialized.
     if not q.app.initialized:
         await init_app(q)
 
     if not q.client.initialized:
         await init_client(q)
 
-    # ATTACH A FLEX LAYOUT FOR THE CARDS
+    # Attach a flex layout for the cards.
     await layouts(q)
 
-    # CHECK WHICH TAB IS ACTIVE AND INVOKE THE CORRESPONDING HANDLER
+    # Check which tab is active and invoke the corresponding handler.
     await handler(q)
 
 # A FLEX LAYOUT FOR AN ADAPTIVE UI
 async def layouts(q:Q):
     q.page['meta'] = ui.meta_card(box='', theme='h2o-dark', title = 'Challenge Wildfires | H2O Olympics', layouts=[
-        # APPLY LAYOUT TO ALL VIEWPORT WIDTHS
+        # Apply layout to all viewport widths.
         ui.layout(breakpoint='xs', zones=[
-            # PREDEFINE APP'S WRAPPER HEIGHT TO 100% VIEWPOER HEIGHT
+            # Predefine app's wrapper height to 100% viewpoer height.
             ui.zone(name='main', size='100vh', zones=[
-                # zone for the header
+                # Zone for the header.
                 ui.zone(name='header', size='80px'),
-                # ZONE FOR NAVIGATION MENU
+                # Zone for navigation menu.
                 ui.zone('tabs'),
-                # ZONE FOR THE ACTUAL CONTENT AND DATA
+                # Zone for the actual content and data.
                 ui.zone(name='body', size='1', zones=[
                     ui.zone(name='data'),
                     ui.zone('predict', align='center'),
                     ui.zone(name='map'),
                 ]),
-                # APP FOOTER OF FIXED SIZED, ALIGNED IN THE CENTEr
+                # App footer of fixed sized, aligned in the center.
                 ui.zone(name='footer', size='120px', align='center')
             ])
         ])
     ])
 
-# HANDLER FOR TAB CONTENT
+# Handler for tab content.
 async def handler(q: Q):
-    # CLEAR UI, DELETE PAGES/CARDS OF OTHER TABS
+    # Clear ui, delete pages/cards of other tabs.
     await reset_pages(q)
 
-    # SET THE CURRENT TAB TO THE USER-SELECTED TAB, OTHERWISE STAY ON THE SAME TAB
+    # Set the current tab to the user-selected tab, otherwise stay on the same tab.
     q.client.tabs = q.args.tabs or q.client.tabs
 
-    # DISPLAY THE MENU BAR WITH DIFFERENT TABS
+    # Display the menu bar with different tabs.
     await render_menu(q)
 
-    # HANDLER FOR EACH TAB / MENU OPTION
+    # Handler for each tab / menu option.
     if q.client.tabs == "data":
         await data.data(q)
 

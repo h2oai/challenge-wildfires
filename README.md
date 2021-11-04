@@ -72,7 +72,7 @@ cd wave-app
 h2o bundle
 ```
 
-### Submission
+### 6. Submission
 
 This operation is going to create a new archive file in the root directory of the repo called `submission.tar`. The archive follows challenge rules and contains the wave app, Python notebook, and this README.
 

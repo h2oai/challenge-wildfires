@@ -4,7 +4,7 @@ import plotly
 import plotly.graph_objects as go
 from plotly.missing_ipywidgets import FigureWidget
 
-# USE PLOTLY TO MAKE SCATTER PLOT FOR DATASET DESCRIPTION
+# Use plotly to make scatter plot for dataset description.
 def make_scatter_plot(q:Q, df: pd.DataFrame):
     fig = go.Figure(
         data=go.Scattergeo(lat=df['latitude'], lon=df['longitude']),
@@ -19,7 +19,7 @@ def make_scatter_plot(q:Q, df: pd.DataFrame):
 
     return fig
 
-# CONVERT PLOTLY FIGURE TO HTML
+# Convert plotly figure to html.
 def to_html(fig:FigureWidget):
     html = plotly.io.to_html(fig)
     return html

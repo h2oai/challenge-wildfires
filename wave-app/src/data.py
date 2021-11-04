@@ -4,17 +4,17 @@ from .ui_utils import make_markdown_table
 from .plot import *
 from .model import *
 
-# FUNCTIONS FOR DATA TAB
+# Functions for data tab.
 
 async def data(q:Q):
-    # GET EXISTING DATASETS FOR THE APP
+    # Get existing datasets for the app.
     app_datasets = list(q.app.datasets.keys())
-    # SELECT DATASET FROM USER INPUT OR THE FIRST DATASET
+    # Select dataset from user input or the first dataset.
     val = app_datasets[0]
     if q.args.describe:
         val = q.args.datasets
 
-    # DISPLAY THE HEAD OF THE DATAFRAME AS A UI MARKDOWN TABLE
+    # Display the head of the dataframe as a ui markdown table.
     df = q.app.datasets[val]
     df_head = df.head(10)
     df_table = await make_markdown_table(
@@ -30,32 +30,32 @@ async def data(q:Q):
         ui.text(df_table),
     ])
 
-    # UPDATE MAP CARD TO NOTIFY SCATTER PLOT IS BEING MADE
+    # Update map card to notify scatter plot is being made.
     q.page['map'] = ui.form_card(box='map', items=[
         ui.progress(label='Making a Scatter Plot...')
     ])
     await q.page.save()
 
-    # MAKE SCATTER PLOT FOR THE FIRST 10000 DATAPOINTS
+    # Make scatter plot for the first 10000 datapoints.
     fig = await q.run(make_scatter_plot, q, df[:10000])
-    # CONVERT PLOTLY FIGURE TO HTML
+    # Convert plotly figure to html.
     html = await q.run(to_html, fig)
-    # RENDER FIGURE'S HTML ON ON THE FORM CARD
+    # Render figure's html on on the form card.
     q.page['map'] = ui.form_card(box=ui.box('map', order=2), items=[
         ui.frame(content=html, height='600px')
     ])
     await q.page.save()
 
 
-# INIT EXISTING DATASETS FOR THE DAPP
+# Init existing datasets for the app.
 async def load_datasets(q: Q):
     q.app. datasets = {}
     data_dir = 'data'
 
-    # FOR EACH CSV.GZ FILE IN THE DATA DIR, MAKE A DATAFRAME AND SAVE IT
+    # For each csv.gz file in the data dir, make a dataframe and save it.
     for dataset_file in os.listdir(data_dir):
-        # READ CSV AND MAKE DATAFRAME
+        # Read csv and make dataframe.
         path = f'{data_dir}/{dataset_file}'
         df = pd.read_csv(path, parse_dates=['acq_date'])
-        # ADD THIS DATASET TO THE LIST OF APP'S DATASETS
+        # Add this dataset to the list of app's datasets.
         q.app.datasets[path] = df

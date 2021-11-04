@@ -80,3 +80,11 @@ This operation is going to create a new archive file in the root directory of th
 cd wave-app
 make submission
 ```
+
+## Community
+
+There are several communities to discuss topics related to AI/ML or application development:
+
+- H2O.ai Community Slack: http://h2oai-community.slack.com/ provides a space to discuss AI/ML related topics or questions related to H2O.ai open source tools.
+- H2O.ai Challenge Forum: https://discuss.challenge.h2o.ai/ is a space to discuss challenges, tools, dataset, and ideas.
+- H2O.ai Wave Discussions: https://github.com/h2oai/wave/discussions includes technical topics about Wave and Wave applications development.

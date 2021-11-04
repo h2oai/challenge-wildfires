@@ -39,7 +39,7 @@ submission: # Create a compressed archive file for submission
 
 clean:
 	rm -f ../submission.tar
-	rm -r *.wave
+	rm -f *.wave
 
 mrproper: clean
 	rm -rf $(VENV_NAME)

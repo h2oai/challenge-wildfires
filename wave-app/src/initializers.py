@@ -4,26 +4,26 @@ from .ui_utils import init_ui
 from .data import load_datasets
 from .model import load_models
 
-# a client is a private broswer tab, which stores it's own run-time information
+# A CLIENT IS A PRIVATE BROSWER TAB, WHICH STORES IT'S OWN RUN-TIME INFORMATION
 async def init_client(q: Q):
-    # render the header and footer
+    # RENDER THE HEADER AND FOOTER
     await init_ui(q)
 
-    # begin application flow with the Data tab
+    # BEGIN APPLICATION FLOW WITH THE DATA TAB
     q.client.tabs = 'data'
 
-    # flag client as initialized
+    # FLAG CLIENT AS INITIALIZED
     q.client.initialized = True
 
     await q.page.save()
 
-# app-level initialization, run-time information shared across all users
+# APP-LEVEL INITIALIZATION, RUN-TIME INFORMATION SHARED ACROSS ALL USERS
 async def init_app(q:Q):
-    # get the list of available datasets
+    # GET THE LIST OF AVAILABLE DATASETS
     await load_datasets(q)
 
-    # get the list of default model(s)
+    # GET THE LIST OF DEFAULT MODEL(S)
     await load_models(q)
 
-    # flag app as initialized
+    # FLAG APP AS INITIALIZED
     q.app.initialized = True

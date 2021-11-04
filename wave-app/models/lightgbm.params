@@ -1,0 +1,6 @@
+num_leaves:10
+max_depth:8
+objective:binary
+metric:auc
+num_iterations:500
+early_stopping_round:5

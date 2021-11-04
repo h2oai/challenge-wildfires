@@ -56,9 +56,11 @@ cd wave-app
 ./venv/bin/wave run src.app
 ```
 
+Point your web browser to http://localhost:10101/ to access the app.
+
 ### 5. Bundle your Wave app to run on H2O AI Cloud
 
-This step prepare the Wave app for submission.
+This step prepares the Wave app for submission.
 
 ```bash
 cd wave-app
@@ -72,10 +74,9 @@ h2o bundle
 
 ### Submission
 
-**Make a compressed archive file for submission**
+This operation is going to create a new archive file in the root directory of the repo called `submission.tar`. The archive follows challenge rules and contains the wave app, Python notebook, and this README.
 
 ```bash
 cd wave-app
 make submission
 ```
-This operation is going to create a new archive file in the root directory of the repo called `submission.tar`. The archive follows challenge rules and contains the wave app, Python notebook, and this README.

@@ -131,3 +131,9 @@ dmypy.json
 # H2O Wave SDK
 wave/sdk/
 
+# Wave app
+*.wave
+
+# Submission
+*.tar
+

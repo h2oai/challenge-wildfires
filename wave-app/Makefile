@@ -6,6 +6,8 @@
 VENV_NAME ?= venv
 # Python to use to build virtual environment
 PYTHON    ?= python3
+# Location of h2o cli
+H2O_CLI   ?= h2o
 
 #
 # Internal
@@ -28,7 +30,7 @@ run: $(WAVE_BIN)
 	$(WAVE_BIN) run src.app
 
 bundle: ## Wave app bundle for H2O AI Hybrid Cloud
-	h2o bundle
+	$(H2O_CLI) bundle
 
 submission: # Create a compressed archive file for submission
 	cp -r ../notebook/ ./notebook/
@@ -37,6 +39,7 @@ submission: # Create a compressed archive file for submission
 
 clean:
 	rm -f ../submission.tar
+	rm -r *.wave
 
 mrproper: clean
 	rm -rf $(VENV_NAME)

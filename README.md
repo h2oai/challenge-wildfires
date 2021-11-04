@@ -44,6 +44,8 @@ python3 -m venv venv
 
 ### 4. Run your Wave app
 
+This step is using installed h2o-wave package to run the application.
+
 ```bash
 cd wave-app
 make run
@@ -55,6 +57,8 @@ cd wave-app
 ```
 
 ### 5. Bundle your Wave app to run on H2O AI Cloud
+
+This step prepare the Wave app for submission.
 
 ```bash
 cd wave-app

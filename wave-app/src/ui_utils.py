@@ -29,10 +29,22 @@ async def render_menu(q:Q):
         await q.page.save()
 
 
+# UI_UTIL FUNCTION TO MAKE A UI.MARKDOWN_TABLE FROM A PD.DATAFRAME
+async def make_markdown_table(fields, rows):
+    def make_markdown_row(values):
+        return f"| {' | '.join([str(x) for x in values])} |"
+
+    return '\n'.join([
+        make_markdown_row(fields),
+        make_markdown_row('---' * len(fields)),
+        '\n'.join([make_markdown_row(row) for row in rows]),
+    ])
+
+
 # EACH TIME A NEW TAB IS RENDERED, CLEAN THE 'BODY' ZONE, I.E.
 # DELETE THE PAGES FOR THE OTHER TABS
 async def reset_pages(q:Q):
-    pages = []
+    pages = ['df', 'map', 'models', 'metrics', 'options']
 
     for page in pages:
         del q.page[page]

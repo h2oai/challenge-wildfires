@@ -1,14 +1,33 @@
-all : setup
+#
+# Parameters
+#
 
-setup: ## Install dependencies
-	python3 -m venv venv
-	./venv/bin/python -m pip install --upgrade pip
-	./venv/bin/python -m pip install -r requirements.txt
+# Name of created virtual environment
+VENV_NAME ?= venv
+# Python to use to build virtual environment
+PYTHON    ?= python3
 
-run: ## Run the Wave App (run `make setup` first)
-	./venv/bin/wave run src.app
+#
+# Internal
+#
+PYTHON_BIN := $(VENV_NAME)/bin/python
+WAVE_BIN   := $(VENV_NAME)/bin/wave
 
-bundle: ## wave app bundle for H2O AI Hybrid Cloud
+all: setup
+
+$(PYTHON_BIN):
+	$(PYTHON) -m venv $(VENV_NAME)
+	$(PYTHON_BIN) -m pip install --upgrade pip
+
+$(WAVE_BIN): $(PYTHON_BIN) requirements.txt
+	$(PYTHON_BIN) -m pip install -r requirements.txt
+
+setup: $(PYTHON_BIN) $(WAVE_BIN)
+
+run: $(WAVE_BIN)
+	$(WAVE_BIN) run src.app
+
+bundle: ## Wave app bundle for H2O AI Hybrid Cloud
 	h2o bundle
 
 submission: # Create a compressed archive file for submission
@@ -17,5 +36,9 @@ submission: # Create a compressed archive file for submission
 	rm -rf ./notebook/
 
 clean:
-	rm -rf venv/
-	rm ../submission.tar
+	rm -f ../submission.tar
+
+mrproper: clean
+	rm -rf $(VENV_NAME)
+
+.PHONY: all setup run bundle submission clean

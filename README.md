@@ -1,61 +1,70 @@
-# challenge-wildfires
-Starter kit for H2O.ai competition.
+# Wildfire Challenge Starter Kit
 
-### Wave App Development
+Starter kit for H2O.ai [Wildfire Challenge](https://www.h2o.ai/wildfire).
 
-#### Requirements
+## Wave App Development
 
-1. Python 3.6+, and pip3
-2. h2o_wave v0.19.0 (python package)
-3. H2O Wave SDK for your platform
-   https://wave.h2o.ai/docs/installation
-4. H2O AI Cloud cli (to debug and bundle your H2O Wave app)
+### Requirements
+
+1. Install Python 3.6+, and pip3
+2. Install H2O Wave SDK - follow instructions for your platform at https://wave.h2o.ai/docs/installation
+3. Install H2O AI Cloud CLI to debug, bundle and execute your H2O Wave app: 
    https://h2oai-cloud-release.s3.amazonaws.com/releases/ai/h2o/h2o-cloud/latest/index.html
-5. `tar` (or an alternative, to create a compressed archive file for submission)
+4. Install `zip` (or an alternative, to create a compressed archive file for submission)
 
-#### 1. Run the H2O Wave Server
+### 1. Run the H2O Wave Server
 
-Go to your H2O Wave SDK directory and run the server
+Go to your H2O Wave SDK directory and run the Wave server:
 
 ```bash
-./waved
+cd $HOME/wave && ./waved
 ```
 > https://wave.h2o.ai/docs/installation#step-4-run
 
 
-#### 2. Clone the H2O.ai challenge-wildfires GitHub repo
+### 2. Clone the H2O.ai Wildfire Challenge GitHub repo
 
 ```bash
 git clone https://github.com/h2oai/challenge-wildfires.git
 ```
 
-#### 3. Setup your Python environment
+### 3. Setup your Python environment
 
 ```bash
 cd wave-app
 make setup
 ```
+or simply
+```bash
+cd wave-app
+python3 -m venv venv
+./venv/bin/python -m pip install --upgrade pip
+./venv/bin/python -m pip install -r requirements.txt
+```
 
-#### 4. Run your Wave app
+### 4. Run your Wave app
 
 ```bash
 cd wave-app
 make run
 ```
+or
+```bash
+cd wave-app
+./venv/bin/wave run src.app
+```
 
-#### 5. Bundle your Wave app to run on H2O AI Cloud
+### 5. Bundle your Wave app to run on H2O AI Cloud
 
 ```bash
 cd wave-app
 make bundle
 ```
-
-This will create a new archive file in the root directory of the repo called `bundle.tgz`. This archive file contains your wave app files for submission. These include:
-- app.toml; the platform config file for H2O.ai Hybrid Cloud
-- source code (in `src/`)
-- static assets (in `static/`)
-- requirements.txt; pip-managed dependencies of the app
-
+or
+```bash
+cd wave-app
+h2o bundle
+```
 
 ### Submission
 
@@ -65,3 +74,4 @@ This will create a new archive file in the root directory of the repo called `bu
 cd wave-app
 make submission
 ```
+This operation is going to create a new archive file in the root directory of the repo called `submission.tar`. The archive follows challenge rules and contains the wave app, Python notebook, and this README.

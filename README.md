@@ -7,10 +7,13 @@ Starter kit for H2O.ai [Wildfire Challenge](https://www.h2o.ai/wildfire).
 ### Requirements
 
 1. Install Python 3.6+, and pip3
+
 2. Install H2O Wave SDK - follow instructions for your platform at https://wave.h2o.ai/docs/installation
+
 3. Install H2O AI Cloud CLI to debug, bundle and execute your H2O Wave app: 
    https://h2oai-cloud-release.s3.amazonaws.com/releases/ai/h2o/h2o-cloud/latest/index.html
-4. Install `zip` (or an alternative, to create a compressed archive file for submission)
+
+4. Install `tar` (or an alternative, to create a compressed archive file for submission)
 
 ### 1. Run the H2O Wave Server
 
@@ -19,7 +22,7 @@ Go to your H2O Wave SDK directory and run the Wave server:
 ```bash
 cd $HOME/wave && ./waved
 ```
-> https://wave.h2o.ai/docs/installation#step-4-run
+> INFO: On Windows, run `waved.exe` to start the server.
 
 
 ### 2. Clone the H2O.ai Wildfire Challenge GitHub repo

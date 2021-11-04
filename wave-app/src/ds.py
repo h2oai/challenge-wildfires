@@ -4,7 +4,7 @@ import pandas as pd
 PRECISION = 1
 MIN_FIRE_RECORDS = 2
 
-# DATA PREP STEP FROM THE SUBMISSION NOTEBOOK (challenge_wildfires/notebook/)
+# Data prep step from the submission notebook (challenge_wildfires/notebook/).
 async def get_data(q:Q, path:str):
 
     aus_fires = pd.read_csv(path, parse_dates=['acq_date'])

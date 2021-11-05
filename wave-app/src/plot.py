@@ -2,11 +2,38 @@ import numpy as np
 import pandas as pd
 import plotly
 import plotly.graph_objects as go
-from h2o_wave import Q
 from plotly.missing_ipywidgets import FigureWidget
 
 AUS_LAT_RANGE = (-40, -9)
 AUS_LON_RANGE = (112, 155)
+
+GEO = dict(
+    showland=True,
+    landcolor="rgb(128, 128, 128)",
+    subunitcolor="rgb(255, 255, 255)",
+    countrycolor="rgb(255, 255, 255)",
+    showlakes=True,
+    lakecolor="rgb(0, 0, 0)",
+    showrivers=True,
+    rivercolor="rgb(0, 0, 0)",
+    showocean=True,
+    oceancolor="rgb(0, 0, 0)",
+    showsubunits=True,
+    showcountries=True,
+    resolution=50,
+    lonaxis=dict(
+        showgrid=True,
+        gridwidth=0.5,
+        range=AUS_LON_RANGE,
+        dtick=5
+    ),
+    lataxis=dict(
+        showgrid=True,
+        gridwidth=0.5,
+        range=AUS_LAT_RANGE,
+        dtick=5
+    )
+)
 
 
 # Use plotly to make scatter plot for dataset description.
@@ -30,33 +57,7 @@ def show_bush_fires(df: pd.DataFrame):
         ),
     ))
     _ = fig.update_layout(
-        geo=dict(
-            showland=True,
-            landcolor="rgb(128, 128, 128)",
-            subunitcolor="rgb(255, 255, 255)",
-            countrycolor="rgb(255, 255, 255)",
-            showlakes=True,
-            lakecolor="rgb(0, 0, 0)",
-            showrivers=True,
-            rivercolor="rgb(0, 0, 0)",
-            showocean=True,
-            oceancolor="rgb(0, 0, 0)",
-            showsubunits=True,
-            showcountries=True,
-            resolution=50,
-            lonaxis=dict(
-                showgrid=True,
-                gridwidth=0.5,
-                range=AUS_LON_RANGE,
-                dtick=5
-            ),
-            lataxis=dict(
-                showgrid=True,
-                gridwidth=0.5,
-                range=AUS_LAT_RANGE,
-                dtick=5
-            )
-        ),
+        geo=GEO,
         paper_bgcolor='rgba(0, 0, 0, 0)',
         margin=dict(l=10, r=10, t=50, b=10),
     )
@@ -84,33 +85,7 @@ def show_predictions(df: pd.DataFrame):
         ),
     ))
     _ = fig.update_layout(
-        geo=dict(
-            showland=True,
-            landcolor="rgb(128, 128, 128)",
-            subunitcolor="rgb(255, 255, 255)",
-            countrycolor="rgb(255, 255, 255)",
-            showlakes=True,
-            lakecolor="rgb(0, 0, 0)",
-            showrivers=True,
-            rivercolor="rgb(0, 0, 0)",
-            showocean=True,
-            oceancolor="rgb(0, 0, 0)",
-            showsubunits=True,
-            showcountries=True,
-            resolution=50,
-            lonaxis=dict(
-                showgrid=True,
-                gridwidth=0.5,
-                range=AUS_LON_RANGE,
-                dtick=5
-            ),
-            lataxis=dict(
-                showgrid=True,
-                gridwidth=0.5,
-                range=AUS_LAT_RANGE,
-                dtick=5
-            )
-        ),
+        geo=GEO,
         paper_bgcolor='rgba(0, 0, 0, 0)',
         margin=dict(l=10, r=10, t=10, b=10),
     )

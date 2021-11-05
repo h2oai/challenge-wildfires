@@ -1,6 +1,6 @@
 [App]
 Name = "h2o-olympics-challenge-wildfires"
-Version = "0.0.1"
+Version = "1.0.1"
 Title = "H2O Olympics - Challenge Wildfires"
 Description = "Challenge Wildfires Starter Kit"
 LongDescription = "about.md"

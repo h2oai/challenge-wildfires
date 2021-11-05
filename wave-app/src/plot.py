@@ -56,7 +56,7 @@ def show_bush_fires(df: pd.DataFrame):
             size=np.log(sample.fire_cnt) + 1,
         ),
     ))
-    _ = fig.update_layout(
+    fig.update_layout(
         geo=GEO,
         paper_bgcolor='rgba(0, 0, 0, 0)',
         margin=dict(l=10, r=10, t=50, b=10),
@@ -84,7 +84,7 @@ def show_predictions(df: pd.DataFrame):
             size=3,
         ),
     ))
-    _ = fig.update_layout(
+    fig.update_layout(
         geo=GEO,
         paper_bgcolor='rgba(0, 0, 0, 0)',
         margin=dict(l=10, r=10, t=10, b=10),

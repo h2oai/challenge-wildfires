@@ -75,6 +75,11 @@ cd wave-app
 h2o bundle
 ```
 
+### Starter kit H2O Wave app in action
+
+https://user-images.githubusercontent.com/64787868/140529424-1a9b9c5c-3a64-44ee-8aed-b67625b93e8f.mp4
+
+
 ### 6. Submission
 
 This operation is going to create a new archive file in the root directory of the repo called `submission.tar`. The archive follows challenge rules and contains the wave app, Python notebook, and this README.

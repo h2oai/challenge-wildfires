@@ -10,8 +10,8 @@ Starter kit for H2O.ai [Wildfire Challenge](https://www.h2o.ai/wildfire).
 
 2. Install H2O Wave SDK - follow instructions for your platform at https://wave.h2o.ai/docs/installation
 
-3. Install H2O AI Cloud CLI to debug, bundle and execute your H2O Wave app: 
-   https://h2oai-cloud-release.s3.amazonaws.com/releases/ai/h2o/h2o-cloud/latest/index.html
+3. Install H2O AI Cloud CLI (v0.9.1-rc1) to debug, bundle and execute your H2O Wave app: 
+   https://h2oai-cloud-release.s3.amazonaws.com/releases/ai/h2o/h2o-cloud/v0.9.1-rc1/index.html
 
 4. Install `tar` (or an alternative, to create a compressed archive file for submission)
 

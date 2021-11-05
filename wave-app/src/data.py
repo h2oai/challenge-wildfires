@@ -3,6 +3,7 @@ import os
 from .ui_utils import make_markdown_table
 from .plot import *
 from .model import *
+from .descriptions import *
 
 # Functions for data tab.
 
@@ -16,12 +17,13 @@ async def data(q:Q):
 
     # Display the head of the dataframe as a ui markdown table.
     df = q.app.datasets[val]
-    df_head = df.head(10)
+    df_head = df.sample(6)
     df_table = await make_markdown_table(
         fields=df_head.columns.tolist(),
         rows=df_head.values.tolist()
     )
     q.page['df'] = ui.form_card(box=ui.box('data'), items=[
+        ui.text(FIRMS_INFO),
         ui.combobox(name='datasets', label='Datasets', choices=app_datasets, value=val),
         ui.buttons(justify='center', items=[
             ui.button(name='describe', label='Describe', primary=True),
@@ -42,7 +44,9 @@ async def data(q:Q):
     html = await q.run(to_html, fig)
     # Render figure's html on on the form card.
     q.page['map'] = ui.form_card(box=ui.box('map', order=2), items=[
-        ui.frame(content=html, height='600px')
+        ui.text(BUSHFIRE_INFO),
+        ui.frame(content=html, height='600px'),
+        ui.message_bar(type='info', text=ACKNOWLEDGEMENT),
     ])
     await q.page.save()
 

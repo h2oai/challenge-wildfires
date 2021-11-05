@@ -57,8 +57,6 @@ def show_bush_fires(q: Q, df: pd.DataFrame):
                 dtick=5
             )
         ),
-        title='2019–20 Australian bushfire season',
-        title_font_color='#FEC925',
         paper_bgcolor='rgba(0, 0, 0, 0)',
         margin=dict(l=10, r=10, t=50, b=10),
     )

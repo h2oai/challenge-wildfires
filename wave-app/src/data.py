@@ -39,7 +39,7 @@ async def data(q:Q):
     await q.page.save()
 
     # Make scatter plot for the 2019-2020 bushfire season.
-    fig = await q.run(show_bush_fires, q, df)
+    fig = await q.run(show_bush_fires, df)
     # Convert plotly figure to html.
     html = await q.run(to_html, fig)
     # Render figure's html on on the form card.

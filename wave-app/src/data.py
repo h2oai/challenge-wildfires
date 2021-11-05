@@ -36,8 +36,8 @@ async def data(q:Q):
     ])
     await q.page.save()
 
-    # Make scatter plot for the first 10000 datapoints.
-    fig = await q.run(make_scatter_plot, q, df[:10000])
+    # Make scatter plot for the 2019-2020 bushfire season.
+    fig = await q.run(show_bush_fires, q, df)
     # Convert plotly figure to html.
     html = await q.run(to_html, fig)
     # Render figure's html on on the form card.

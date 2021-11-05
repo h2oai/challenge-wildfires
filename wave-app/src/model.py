@@ -4,6 +4,7 @@ import lightgbm as lgb
 import os
 from .ui_utils import *
 from .plot import *
+from .descriptions import MODEL_INFO
 
 # Functions for model tab.
 
@@ -16,6 +17,7 @@ async def model(q:Q):
 
     # Show model selection/load inputs.
     q.page['models'] = ui.form_card(box=ui.box('data'), items=[
+            ui.text(MODEL_INFO),
             ui.combobox(name='models', label='Models', choices=models, value=val),
             ui.buttons(justify='center', items=[
                 ui.button(name='load', label='Load', primary=True),

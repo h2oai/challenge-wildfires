@@ -18,8 +18,9 @@ async def model(q:Q):
     q.page['models'] = ui.form_card(box=ui.box('data'), items=[
             ui.combobox(name='models', label='Models', choices=models, value=val),
             ui.buttons(justify='center', items=[
-                ui.button(name='load', label='Load', primary=True),
-            ])
+                ui.button(name='load', label='Load Model', primary=True),
+            ]),
+            ui.text(open('models/model_info.md').read()),
     ])
     await q.page.save()
 

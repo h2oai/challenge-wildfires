@@ -16,7 +16,7 @@ async def init_ui(q: Q):
     # Footer card to display a caption of embeded html for the footer.
     q.page['footer'] = ui.footer_card(
         box='footer',
-            caption='Made with 💛️ using Wave. (c) 2021 H2O.ai. All rights reserved.'
+            caption='Made with 💛️ using H2O Wave.'
     )
 
 

@@ -19,5 +19,6 @@ The archive fire/hotspot datasets could be [requested in yearly chunks for each 
 Since NOAA-20 has less than 2 years data we collected the other instruments. 
 
 Please check our [Wildfire Challenge Starter Kit](https://github.com/h2oai/challenge-wildfires) as an example how to use the provided datasets.
+
 ### Download
 For easy access we uploaded eight years of raw sensor data to [S3](https://s3.us-west-1.amazonaws.com/ai.h2o.challenge.datasets/wildfire-challenge/firms_fires_2013_2021.zip). 

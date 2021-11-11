@@ -29,6 +29,15 @@ setup: $(PYTHON_BIN) $(WAVE_BIN)
 run: $(WAVE_BIN)
 	$(WAVE_BIN) run src.app
 
+cloud-config:
+	$(H2O_CLI) config setup
+
+cloud-private:
+	$(H2O_CLI) bundle deploy
+
+cloud-public:
+	$(H2O_CLI) bundle import -v ALL_USERS
+
 bundle: ## Wave app bundle for H2O AI Hybrid Cloud
 	$(H2O_CLI) bundle
 

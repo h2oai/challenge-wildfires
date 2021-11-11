@@ -75,12 +75,44 @@ cd wave-app
 h2o bundle
 ```
 
-### Starter kit H2O Wave app in action
+## Debug or Publish your Wave app on H2O AI Cloud
 
-https://user-images.githubusercontent.com/64787868/140529424-1a9b9c5c-3a64-44ee-8aed-b67625b93e8f.mp4
+H2O.ai Wildfire & Bushfire Challenge enables participants to deploy, debug, and upload their H2O Wave apps on a managed H2O AI Cloud instance. H2O AI Cloud's Appstore operationalizes AI/ML applications built with H2O Wave.
 
+> Developer Guide: https://h2oai.github.io/h2o-ai-cloud/docs/userguide/developer-guide
 
-### 6. Submission
+Wildfire Challenge allows two usage modes for the participants on the cloud:
+
+1. cloud-private: immediately run your current app source in the platform. This command will automatically package your current directory into a .wave bundle, import it into the platform, and run it privately (only visible to you). In the output you will be able to find a URL where you can reach the instance, or visit the "My Instances" in the UI.
+
+2. cloud-public: publish an app to the platform. This command will automatically package your current directory into a .wave bundle and import it into the platform. The app will be visible and available to run for all participants. Participants will be run an instance on H2OAIC Appstore.
+
+To get started, please follow the steps below:
+
+* Configure your `h2o` cli to run your Wave apps on H2O AI Cloud
+
+> Note: `https://challenge.h2o.ai/` is a H2O AI cloud instance managed by H2O.ai and is available for use for Callenge Wildfire.
+
+```bash
+cd wave-app
+make cloud-config
+```
+
+* Deploy wave app and view privately
+
+```bash
+cd wave-app
+make cloud-private
+```
+
+* Upload wave app and make it visible to other users
+
+```bash
+cd wave-app
+make cloud-public
+```
+
+## Submission
 
 This operation is going to create a new archive file in the root directory of the repo called `submission.tar`. The archive follows challenge rules and contains the wave app, Python notebook, and this README.
 
@@ -88,6 +120,12 @@ This operation is going to create a new archive file in the root directory of th
 cd wave-app
 make submission
 ```
+
+
+## Starter kit H2O Wave app in action
+
+https://user-images.githubusercontent.com/64787868/140529424-1a9b9c5c-3a64-44ee-8aed-b67625b93e8f.mp4
+
 
 ## Community
 

@@ -77,21 +77,19 @@ h2o bundle
 
 ## Debug or Publish your Wave app on H2O AI Cloud
 
-H2O.ai Wildfire & Bushfire Challenge enables participants to deploy, debug, and upload their H2O Wave apps on a managed H2O AI Cloud instance. H2O AI Cloud's Appstore operationalizes AI/ML applications built with H2O Wave.
+H2O.ai Wildfire & Bushfire Challenge enables participants to deploy, debug, and upload their H2O Wave apps on a managed H2O AI Cloud instance. H2O AI Cloud's Appstore operationalizes AI/ML applications built with H2O Wave. https://challenge.h2o.ai/ is a H2O AI cloud instance managed by H2O.ai and is available for use for Callenge Wildfire.
 
-> Developer Guide: https://h2oai.github.io/h2o-ai-cloud/docs/userguide/developer-guide
+H2OAI Cloud Developer Guide is available here: https://h2oai.github.io/h2o-ai-cloud/docs/userguide/developer-guide
 
 Wildfire Challenge allows two usage modes for the participants on the cloud:
 
-1. cloud-private: immediately run your current app source in the platform. This command will automatically package your current directory into a .wave bundle, import it into the platform, and run it privately (only visible to you). In the output you will be able to find a URL where you can reach the instance, or visit the "My Instances" in the UI.
+1. **cloud-private**: immediately run your current app source in the platform. This command will automatically package your current directory into a .wave bundle, import it into the platform, and run it privately (only visible to you). In the output you will be able to find a URL where you can reach the instance, or visit the "My Instances" in the UI.
 
-2. cloud-public: publish an app to the platform. This command will automatically package your current directory into a .wave bundle and import it into the platform. The app will be visible and available to run for all participants. Participants will be run an instance on H2OAIC Appstore.
+2. **cloud-public**: publish an app to the platform. This command will automatically package your current directory into a .wave bundle and import it into the platform. The app will be visible and available to run for all participants. Participants will be run an instance on H2OAIC Appstore.
 
 To get started, please follow the steps below:
 
 * Configure your `h2o` cli to run your Wave apps on H2O AI Cloud
-
-> Note: `https://challenge.h2o.ai/` is a H2O AI cloud instance managed by H2O.ai and is available for use for Callenge Wildfire.
 
 ```bash
 cd wave-app

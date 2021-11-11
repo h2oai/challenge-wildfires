@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Slack
+    url: https://h2oai-community.slack.com/archives/C02LMUZBBNU
+    about: Ask questions in H2O.ai's community slack channel #challenge-wildfires
+  - name: 🗣️ Forum
+    url: https://discuss.challenge.h2o.ai/c/wildfire-prediction-challenge/
+    about:  space to discuss challenges, tools, dataset, and ideas

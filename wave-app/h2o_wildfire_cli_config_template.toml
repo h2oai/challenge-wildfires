@@ -1,0 +1,3 @@
+ClientID = "hac-appstore-public"
+Endpoint = "https://challenge.h2o.ai"
+OIDCAddress = "https://auth.challenge.h2o.ai/auth/realms/hac"

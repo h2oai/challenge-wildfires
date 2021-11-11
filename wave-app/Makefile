@@ -30,6 +30,7 @@ run: $(WAVE_BIN)
 	$(WAVE_BIN) run src.app
 
 cloud-config:
+	cp h2o_wildfire_cli_config_template.toml h2o_wildfire_cli_config.toml
 	$(H2O_CLI) config update-token --conf h2o_wildfire_cli_config.toml
 
 cloud-private:

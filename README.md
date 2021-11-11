@@ -31,7 +31,12 @@ cd $HOME/wave && ./waved
 git clone https://github.com/h2oai/challenge-wildfires.git
 ```
 
-### 3. Setup your Python environment
+### 3. Search for Datasets
+ * Use the provided [sample for Australia](https://github.com/h2oai/challenge-wildfires/tree/main/notebook/data/australia_fire_daily.csv.gz)
+ * Download the [global raw data](https://github.com/h2oai/challenge-wildfires/tree/main/notebook/data)
+ * Search for other useful external datasets
+
+### 4. Setup your Python environment
 
 ```bash
 cd wave-app
@@ -45,7 +50,7 @@ python3 -m venv venv
 ./venv/bin/python -m pip install -r requirements.txt
 ```
 
-### 4. Run your Wave app
+### 5. Run your Wave app
 
 This step is using installed h2o-wave package to run the application.
 
@@ -61,7 +66,7 @@ cd wave-app
 
 Point your web browser to http://localhost:10101/ to access the app.
 
-### 5. Bundle your Wave app to run on H2O AI Cloud
+### 6. Bundle your Wave app to run on H2O AI Cloud
 
 This step prepares the Wave app for submission.
 
@@ -103,6 +108,7 @@ make cloud-config
 ```bash
 cd wave-app
 make cloud-private
+git update-index --skip-worktree h2o_wildfire_cli_config.toml
 ```
 
 * Upload wave app and make it visible to other users

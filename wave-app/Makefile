@@ -30,13 +30,13 @@ run: $(WAVE_BIN)
 	$(WAVE_BIN) run src.app
 
 cloud-config:
-	$(H2O_CLI) config setup
+	$(H2O_CLI) config update-token --conf h2o_wildfire_cli_config.toml
 
 cloud-private:
-	$(H2O_CLI) bundle deploy
+	$(H2O_CLI) bundle deploy --conf h2o_wildfire_cli_config.toml
 
 cloud-public:
-	$(H2O_CLI) bundle import -v ALL_USERS
+	$(H2O_CLI) bundle import -v ALL_USERS --conf h2o_wildfire_cli_config.toml
 
 bundle: ## Wave app bundle for H2O AI Hybrid Cloud
 	$(H2O_CLI) bundle

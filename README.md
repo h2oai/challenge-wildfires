@@ -91,6 +91,8 @@ To get started, please follow the steps below:
 
 * Configure your `h2o` cli to run your Wave apps on H2O AI Cloud
 
+> Note: For ease of use, config setup steps have been automated for you. When you get to the token portion, you will need to visit https://challenge.h2o.ai/auth/get-token in order to obtain your token. After entering the token here, you are all set.
+
 ```bash
 cd wave-app
 make cloud-config
@@ -104,6 +106,8 @@ make cloud-private
 ```
 
 * Upload wave app and make it visible to other users
+
+> Note: **WARNING:** this mode will allow all participants to view and launch an instance of your H2O Wave app on the Appstore.
 
 ```bash
 cd wave-app

@@ -1,2 +1,3 @@
 sdk/*
 venv/*
+h2o_wildfire_cli_config.toml

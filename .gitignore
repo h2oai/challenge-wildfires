@@ -134,6 +134,9 @@ wave/sdk/
 # Wave app
 *.wave
 
+# H2O AI Cloud config toml file
+wave-app/h2o_wildfire_cli_config.toml
+
 # Submission
 *.tar
 

@@ -88,9 +88,9 @@ H2OAI Cloud Developer Guide is available here: https://h2oai.github.io/h2o-ai-cl
 
 Wildfire Challenge allows two usage modes for the participants on the cloud:
 
-1. **cloud-private**: immediately run your current app source in the platform. This command will automatically package your current directory into a .wave bundle, import it into the platform, and run it privately (only visible to you). In the output you will be able to find a URL where you can reach the instance, or visit the "My Instances" in the UI.
+1. **publish-cloud-private**: immediately run your current app source in the platform. This command will automatically package your current directory into a .wave bundle, import it into the platform, and run it privately (only visible to you). In the output you will be able to find a URL where you can reach the instance, or visit the "My Instances" in the UI.
 
-2. **cloud-public**: publish an app to the platform. This command will automatically package your current directory into a .wave bundle and import it into the platform. The app will be visible and available to run for all participants. Participants will be run an instance on H2OAIC Appstore.
+2. **publish-cloud-public**: publish an app to the platform. This command will automatically package your current directory into a .wave bundle and import it into the platform. The app will be visible and available to run for all participants. Participants will be run an instance on H2OAIC Appstore.
 
 To get started, please follow the steps below:
 
@@ -100,14 +100,14 @@ To get started, please follow the steps below:
 
 ```bash
 cd wave-app
-make cloud-config
+make generate-cloud-config
 ```
 
 * Deploy wave app and view privately
 
 ```bash
 cd wave-app
-make cloud-private
+make publish-cloud-private
 git update-index --skip-worktree h2o_wildfire_cli_config.toml
 ```
 
@@ -117,7 +117,7 @@ git update-index --skip-worktree h2o_wildfire_cli_config.toml
 
 ```bash
 cd wave-app
-make cloud-public
+make publish-cloud-public
 ```
 
 ## Submission

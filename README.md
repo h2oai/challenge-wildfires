@@ -84,7 +84,7 @@ h2o bundle
 
 H2O.ai Wildfire & Bushfire Challenge enables participants to deploy, debug, and upload their H2O Wave apps on a managed H2O AI Cloud instance. H2O AI Cloud's Appstore operationalizes AI/ML applications built with H2O Wave. https://challenge.h2o.ai/ is a H2O AI cloud instance managed by H2O.ai and is available for use for Callenge Wildfire.
 
-H2OAI Cloud Developer Guide is available here: https://h2oai.github.io/h2o-ai-cloud/docs/userguide/developer-guide
+> Developer Guide is available here: https://h2oai.github.io/h2o-ai-cloud/docs/userguide/developer-guide
 
 Wildfire Challenge allows two usage modes for the participants on the cloud:
 
@@ -94,16 +94,19 @@ Wildfire Challenge allows two usage modes for the participants on the cloud:
 
 To get started, please follow the steps below:
 
-* Configure your `h2o` cli to run your Wave apps on H2O AI Cloud
+### 1. Configure your h2o cli to run your Wave apps on H2O AI Cloud
 
 > Note: For ease of use, config setup steps have been automated for you. When you get to the token portion, you will need to visit https://challenge.h2o.ai/auth/get-token in order to obtain your token. After entering the token here, you are all set.
+
+> _WARNING:_ please ensure that the newly generated config file, `h2o_wildfire_cli_config.toml`, is confidential.
 
 ```bash
 cd wave-app
 make generate-cloud-config
 ```
 
-* Deploy wave app and view privately
+
+### 2. Deploy wave app and view privately
 
 ```bash
 cd wave-app
@@ -111,9 +114,9 @@ make publish-cloud-private
 git update-index --skip-worktree h2o_wildfire_cli_config.toml
 ```
 
-* Upload wave app and make it visible to other users
+### 3. Upload wave app and make it visible to other users
 
-> Note: **WARNING:** this mode will allow all participants to view and launch an instance of your H2O Wave app on the Appstore.
+> _WARNING:_ this mode will allow all participants to view and launch an instance of your H2O Wave app on the Appstore.
 
 ```bash
 cd wave-app

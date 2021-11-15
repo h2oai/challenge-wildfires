@@ -29,6 +29,16 @@ setup: $(PYTHON_BIN) $(WAVE_BIN)
 run: $(WAVE_BIN)
 	$(WAVE_BIN) run src.app
 
+generate-cloud-config:
+	cp h2o_wildfire_cli_config_template.toml h2o_wildfire_cli_config.toml
+	$(H2O_CLI) config update-token --conf h2o_wildfire_cli_config.toml
+
+publish-cloud-private:
+	$(H2O_CLI) bundle deploy --conf h2o_wildfire_cli_config.toml
+
+publish-cloud-public:
+	$(H2O_CLI) bundle import -v ALL_USERS --conf h2o_wildfire_cli_config.toml
+
 bundle: ## Wave app bundle for H2O AI Hybrid Cloud
 	$(H2O_CLI) bundle
 

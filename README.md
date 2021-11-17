@@ -111,7 +111,6 @@ make generate-cloud-config
 ```bash
 cd wave-app
 make publish-cloud-private
-git update-index --skip-worktree h2o_wildfire_cli_config.toml
 ```
 
 ### 3. Upload wave app and make it visible to other users

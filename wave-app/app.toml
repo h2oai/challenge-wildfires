@@ -1,6 +1,6 @@
 [App]
 Name = "challenge-wildfires-submission-<fill your team name>"
-Version = "1.0"
+Version = "2.1"
 Title = "Wildfire Challenge Submission Title <Team>"
 Description = "Wildfire Challenge Submission Description <Team>."
 LongDescription = "about.md"
